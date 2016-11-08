@@ -217,5 +217,16 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
 
 - (BOOL)testIsAppStoreVersionNewer;
 
+@end
+
+@interface UIAlertController (Extra)
+- (void)show;
+- (void)show:(BOOL)animated;
+@end
+
+@interface UIAlertController (Private)
+
+@property (nonatomic, strong) UIWindow *alertWindow;
 
 @end
+
