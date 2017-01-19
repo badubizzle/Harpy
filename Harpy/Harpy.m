@@ -91,6 +91,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 - (void)checkVersion {
     if (!_presentingViewController) {
         NSLog(@"[Harpy]: Please make sure that you have set _presentationViewController before calling checkVersion, checkVersionDaily, or checkVersionWeekly.");
+        [self performVersionCheck];
     } else {
         [self performVersionCheck];
     }
@@ -338,6 +339,8 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
         if (_alertControllerTintColor) {
             [alertController.view setTintColor:_alertControllerTintColor];
         }
+    }else{
+        [alertController show:YES];
     }
 
     if ([self.delegate respondsToSelector:@selector(harpyDidShowUpdateDialog)]){
