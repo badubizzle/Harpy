@@ -23,20 +23,26 @@ NSString * const HarpyLanguageDanish                = @"da";
 NSString * const HarpyLanguageDutch                 = @"nl";
 NSString * const HarpyLanguageEnglish               = @"en";
 NSString * const HarpyLanguageEstonian              = @"et";
+NSString * const HarpyLanguageFinnish               = @"fi";
 NSString * const HarpyLanguageFrench                = @"fr";
 NSString * const HarpyLanguageGerman                = @"de";
+NSString * const HarpyLanguageGreek                 = @"el";
 NSString * const HarpyLanguageHebrew                = @"he";
 NSString * const HarpyLanguageHungarian             = @"hu";
+NSString * const HarpyLanguageIndonesian            = @"id";
 NSString * const HarpyLanguageItalian               = @"it";
 NSString * const HarpyLanguageJapanese              = @"ja";
 NSString * const HarpyLanguageKorean                = @"ko";
 NSString * const HarpyLanguageLatvian               = @"lv";
 NSString * const HarpyLanguageLithuanian            = @"lt";
 NSString * const HarpyLanguageMalay                 = @"ms";
+NSString * const HarpyLanguageNorwegian             = @"nb-NO";
 NSString * const HarpyLanguagePolish                = @"pl";
 NSString * const HarpyLanguagePortugueseBrazil      = @"pt";
 NSString * const HarpyLanguagePortuguesePortugal    = @"pt-PT";
 NSString * const HarpyLanguageRussian               = @"ru";
+NSString * const HarpyLanguageSerbianCyrillic       = @"sr-Cyrl";
+NSString * const HarpyLanguageSerbianLatin          = @"sr-Latn";
 NSString * const HarpyLanguageSlovenian             = @"sl";
 NSString * const HarpyLanguageSwedish               = @"sv";
 NSString * const HarpyLanguageSpanish               = @"es";
@@ -143,7 +149,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 - (void)performVersionCheck {
     NSURL *storeURL = [self itunesURL];
-    NSURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL];
+    NSURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
 
     [self printDebugMessage:[NSString stringWithFormat:@"storeURL: %@", storeURL]];
 

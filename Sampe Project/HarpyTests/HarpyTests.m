@@ -207,24 +207,6 @@
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Updaten"]);
 }
 
-- (void)testFrenchLocalization {
-    [_harpy setForceLanguageLocalization:HarpyLanguageFrench];
-
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Mise à jour disponible"]);
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"La prochaine fois"]);
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Sauter cette version"]);
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Mettre à jour"]);
-}
-
-- (void)testGermanLocalization {
-    [_harpy setForceLanguageLocalization:HarpyLanguageGerman];
-
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Update erhältlich"]);
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Später"]);
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Diese Version überspringen"]);
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Update"]);
-}
-
 - (void)testEnglishLocalization {
     [_harpy setForceLanguageLocalization:HarpyLanguageEnglish];
 
@@ -243,6 +225,42 @@
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Uuenda"]);
 }
 
+- (void)testFinnishLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageFinnish];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Päivitys saatavilla"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Ensi kerralla"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Jätä tämä versio väliin"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Päivitys"]);
+}
+
+- (void)testFrenchLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageFrench];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Mise à jour disponible"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"La prochaine fois"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Sauter cette version"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Mettre à jour"]);
+}
+
+- (void)testGermanLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageGerman];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Update erhältlich"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Später"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Diese Version überspringen"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Update"]);
+}
+
+- (void)testGreekLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageGreek];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Διαθέσιμη Ενημέρωση"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Άλλη φορά"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Αγνόησε αυτήν την έκδοση"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Αναβάθμιση"]);
+}
+
 - (void)testHebrewLocalization {
     [_harpy setForceLanguageLocalization:HarpyLanguageHebrew];
 
@@ -259,6 +277,15 @@
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Később"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Ennél a verziónál ne figyelmeztessen"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Frissítés"]);
+}
+
+- (void)testIndoneisanLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageIndonesian];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Pembaruan Tersedia"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Lain kali"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Lewati versi ini"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Perbarui"]);
 }
 
 - (void)testItalianLocalization {
@@ -291,7 +318,7 @@
 - (void)testLatvianLocalization {
     [_harpy setForceLanguageLocalization:HarpyLanguageLatvian];
 
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Atjaunojums"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Atjauninājums pieejams"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Nākamreiz"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Izlaist šo versiju"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Atjaunināt"]);
@@ -300,7 +327,7 @@
 - (void)testLithuanianLocalization {
     [_harpy setForceLanguageLocalization:HarpyLanguageLithuanian];
 
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Atjauninājums pieejams"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Atnaujinimas"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Kitą kartą"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Praleisti šią versiją"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Atnaujinti"]);
@@ -315,6 +342,15 @@
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Muat turun"]);
 }
 
+- (void)testNorwegianLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageNorwegian];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Oppdatering tilgjengelig"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Neste gang"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Hopp over denne versjonen"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Oppdater"]);
+}
+
 - (void)testPolishLocalization {
     [_harpy setForceLanguageLocalization:HarpyLanguagePolish];
 
@@ -327,7 +363,7 @@
 - (void)testPortugueseBrazilLocalization {
     [_harpy setForceLanguageLocalization:HarpyLanguagePortugueseBrazil];
 
-    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Nova atualização disponível"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Atualização disponível"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Próxima vez"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Ignorar esta versão"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Atualizar"]);
@@ -349,6 +385,24 @@
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"В следующий раз"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Пропустить эту версию"]);
     XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Обновить"]);
+}
+
+- (void)testSerbianCyrillicLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageSerbianCyrillic];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Ажурирање доступно"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Следећи пут"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Прескочи ову верзију"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Ажурирај"]);
+}
+
+- (void)testSerbianLatinLocalization {
+    [_harpy setForceLanguageLocalization:HarpyLanguageSerbianLatin];
+
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update Available"] isEqualToString:@"Ažuriranje dostupno"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Next time"] isEqualToString:@"Sledeći put"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Skip this version"] isEqualToString:@"Preskoči ovu verziju"]);
+    XCTAssertTrue([[_harpy testLocalizedStringForKey:@"Update"] isEqualToString:@"Ažuriraj"]);
 }
 
 - (void)testSlovenianLocalization {
