@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import <objc/runtime.h>
 //! Project version number for Harpy.
 FOUNDATION_EXPORT double HarpyVersionNumber;
 
@@ -26,26 +26,20 @@ FOUNDATION_EXPORT NSString * const HarpyLanguageDanish;
 FOUNDATION_EXPORT NSString * const HarpyLanguageDutch;
 FOUNDATION_EXPORT NSString * const HarpyLanguageEnglish;
 FOUNDATION_EXPORT NSString * const HarpyLanguageEstonian;
-FOUNDATION_EXPORT NSString * const HarpyLanguageFinnish;
 FOUNDATION_EXPORT NSString * const HarpyLanguageFrench;
 FOUNDATION_EXPORT NSString * const HarpyLanguageGerman;
-FOUNDATION_EXPORT NSString * const HarpyLanguageGreek;
 FOUNDATION_EXPORT NSString * const HarpyLanguageHebrew;
 FOUNDATION_EXPORT NSString * const HarpyLanguageHungarian;
-FOUNDATION_EXPORT NSString * const HarpyLanguageIndonesian;
 FOUNDATION_EXPORT NSString * const HarpyLanguageItalian;
 FOUNDATION_EXPORT NSString * const HarpyLanguageJapanese;
 FOUNDATION_EXPORT NSString * const HarpyLanguageKorean;
 FOUNDATION_EXPORT NSString * const HarpyLanguageLatvian;
 FOUNDATION_EXPORT NSString * const HarpyLanguageLithuanian;
 FOUNDATION_EXPORT NSString * const HarpyLanguageMalay;
-FOUNDATION_EXPORT NSString * const HarpyLanguageNorwegian;
 FOUNDATION_EXPORT NSString * const HarpyLanguagePolish;
 FOUNDATION_EXPORT NSString * const HarpyLanguagePortugueseBrazil;
 FOUNDATION_EXPORT NSString * const HarpyLanguagePortuguesePortugal;
 FOUNDATION_EXPORT NSString * const HarpyLanguageRussian;
-FOUNDATION_EXPORT NSString * const HarpyLanguageSerbianCyrillic;
-FOUNDATION_EXPORT NSString * const HarpyLanguageSerbianLatin;
 FOUNDATION_EXPORT NSString * const HarpyLanguageSlovenian;
 FOUNDATION_EXPORT NSString * const HarpyLanguageSwedish;
 FOUNDATION_EXPORT NSString * const HarpyLanguageSpanish;
@@ -70,6 +64,17 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
     HarpyAlertTypeSkip,         // Presents User with option to update the app now, at next launch, or to skip this version all together
     HarpyAlertTypeNone          // Don't show the alert type , useful for skipping Patch, Minor, Major updates
 };
+
+@interface UIAlertController (Extra)
+- (void)show;
+- (void)show:(BOOL)animated;
+@end
+
+@interface UIAlertController (Private)
+
+@property (nonatomic, strong) UIWindow *alertWindow;
+
+@end
 
 @interface Harpy : NSObject
 
@@ -235,4 +240,3 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
 @property (nonatomic, strong) UIWindow *alertWindow;
 
 @end
-

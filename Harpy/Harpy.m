@@ -23,26 +23,20 @@ NSString * const HarpyLanguageDanish                = @"da";
 NSString * const HarpyLanguageDutch                 = @"nl";
 NSString * const HarpyLanguageEnglish               = @"en";
 NSString * const HarpyLanguageEstonian              = @"et";
-NSString * const HarpyLanguageFinnish               = @"fi";
 NSString * const HarpyLanguageFrench                = @"fr";
 NSString * const HarpyLanguageGerman                = @"de";
-NSString * const HarpyLanguageGreek                 = @"el";
 NSString * const HarpyLanguageHebrew                = @"he";
 NSString * const HarpyLanguageHungarian             = @"hu";
-NSString * const HarpyLanguageIndonesian            = @"id";
 NSString * const HarpyLanguageItalian               = @"it";
 NSString * const HarpyLanguageJapanese              = @"ja";
 NSString * const HarpyLanguageKorean                = @"ko";
 NSString * const HarpyLanguageLatvian               = @"lv";
 NSString * const HarpyLanguageLithuanian            = @"lt";
 NSString * const HarpyLanguageMalay                 = @"ms";
-NSString * const HarpyLanguageNorwegian             = @"nb-NO";
 NSString * const HarpyLanguagePolish                = @"pl";
 NSString * const HarpyLanguagePortugueseBrazil      = @"pt";
 NSString * const HarpyLanguagePortuguesePortugal    = @"pt-PT";
 NSString * const HarpyLanguageRussian               = @"ru";
-NSString * const HarpyLanguageSerbianCyrillic       = @"sr-Cyrl";
-NSString * const HarpyLanguageSerbianLatin          = @"sr-Latn";
 NSString * const HarpyLanguageSlovenian             = @"sl";
 NSString * const HarpyLanguageSwedish               = @"sv";
 NSString * const HarpyLanguageSpanish               = @"es";
@@ -149,7 +143,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 - (void)performVersionCheck {
     NSURL *storeURL = [self itunesURL];
-    NSURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
+    NSURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL];
 
     [self printDebugMessage:[NSString stringWithFormat:@"storeURL: %@", storeURL]];
 
@@ -286,11 +280,12 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 - (void)showAlertIfCurrentAppStoreVersionNotSkipped:(NSString *)currentAppStoreVersion {
     // Check if user decided to skip this version in the past
     NSString *storedSkippedVersion = [[NSUserDefaults standardUserDefaults] objectForKey:HarpyDefaultSkippedVersion];
-
+    NSLog(@"Version: %@", storedSkippedVersion);
     if (![storedSkippedVersion isEqualToString:currentAppStoreVersion]) {
         [self showAlertWithAppStoreVersion:currentAppStoreVersion];
     } else {
         // Don't show alert.
+        [self showAlertWithAppStoreVersion:currentAppStoreVersion];
         return;
     }
 }
@@ -311,7 +306,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
         case HarpyAlertTypeOption: {
 
             UIAlertController *alertController = [self createAlertController];
-            [alertController addAction:[self nextTimeAlertAction]];
+            //[alertController addAction:[self nextTimeAlertAction]];
             [alertController addAction:[self updateAlertAction]];
 
             [self showAlertController:alertController];
@@ -321,8 +316,8 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
         case HarpyAlertTypeSkip: {
 
             UIAlertController *alertController = [self createAlertController];
-            [alertController addAction:[self skipAlertAction]];
-            [alertController addAction:[self nextTimeAlertAction]];
+            //[alertController addAction:[self skipAlertAction]];
+            //[alertController addAction:[self nextTimeAlertAction]];
             [alertController addAction:[self updateAlertAction]];
 
             [self showAlertController:alertController];
@@ -356,8 +351,11 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
 
 - (UIAlertController *)createAlertController {
 
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:_updateAvailableMessage
-                                                                             message:_theNewVersionMessage
+    NSString *title = @"Hot off the press!";
+    NSString *message = @"We have a shiny new update waiting for you, get it right away!";
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title //_updateAvailableMessage
+                                                                             message:message //_theNewVersionMessage
                                                                       preferredStyle:UIAlertControllerStyleAlert];
 
     return alertController;
